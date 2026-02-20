@@ -1,0 +1,553 @@
+From,About,Sentiment
+Jenna,Colby,Friend
+Jenna,Stephenie,Friend
+Jenna,Cirie,Foe
+Jenna,Ozzy,Friend
+Jenna,Coach,Foe
+Jenna,Aubry,Leaning positive
+Jenna,Chrissy,Foe
+Jenna,Angelina,Friend
+Jenna,Christian,Leaning positive
+Jenna,Mike,Leaning positive
+Jenna,Rick,Leaning negative
+Jenna,Jonathan,Friend
+Jenna,Dee,Foe
+Jenna,Emily,Friend
+Jenna,Charlie,Friend
+Jenna,Q,Friend
+Jenna,Tiffany,Leaning positive
+Jenna,Genevieve,50/50
+Jenna,Joe,Friend
+Jenna,Kamilla,Friend
+Jenna,Kyle,Friend
+Jenna,Rizo,Friend
+Jenna,Savannah,Friend
+Colby,Jenna,Friend
+Colby,Stephenie,Friend
+Colby,Cirie,Friend
+Colby,Ozzy,Friend
+Colby,Coach,Friend
+Colby,Aubry,Leaning positive
+Colby,Chrissy,50/50
+Colby,Angelina,Foe
+Colby,Christian,Leaning negative
+Colby,Mike,50/50
+Colby,Rick,Friend
+Colby,Jonathan,Friend
+Colby,Dee,Foe
+Colby,Emily,Friend
+Colby,Charlie,50/50
+Colby,Q,Foe
+Colby,Tiffany,50/50
+Colby,Genevieve,Friend
+Colby,Joe,Friend
+Colby,Kamilla,Foe
+Colby,Kyle,Friend
+Colby,Rizo,Leaning negative
+Colby,Savannah,Friend
+Stephenie,Jenna,Friend
+Stephenie,Colby,Friend
+Stephenie,Cirie,Friend
+Stephenie,Ozzy,Friend
+Stephenie,Coach,Friend
+Stephenie,Aubry,Friend
+Stephenie,Chrissy,Friend
+Stephenie,Angelina,50/50
+Stephenie,Christian,Leaning positive
+Stephenie,Mike,Leaning positive
+Stephenie,Rick,Friend
+Stephenie,Jonathan,Friend
+Stephenie,Dee,Friend
+Stephenie,Emily,Friend
+Stephenie,Charlie,50/50
+Stephenie,Q,Foe
+Stephenie,Tiffany,Foe
+Stephenie,Genevieve,Friend
+Stephenie,Joe,Friend
+Stephenie,Kamilla,Leaning positive
+Stephenie,Kyle,Leaning positive
+Stephenie,Rizo,50/50
+Stephenie,Savannah,50/50
+Cirie,Jenna,Leaning positive
+Cirie,Colby,Leaning positive
+Cirie,Stephenie,50/50
+Cirie,Ozzy,Leaning positive
+Cirie,Coach,Friend
+Cirie,Aubry,Friend
+Cirie,Chrissy,Friend
+Cirie,Angelina,Friend
+Cirie,Christian,50/50
+Cirie,Mike,50/50
+Cirie,Rick,Leaning positive
+Cirie,Jonathan,Friend
+Cirie,Dee,Leaning negative
+Cirie,Emily,Friend
+Cirie,Charlie,50/50
+Cirie,Q,Leaning negative
+Cirie,Tiffany,Leaning positive
+Cirie,Genevieve,Leaning negative
+Cirie,Joe,Leaning positive
+Cirie,Kamilla,50/50
+Cirie,Kyle,Foe
+Cirie,Rizo,Foe
+Cirie,Savannah,Foe
+Ozzy,Jenna,Friend
+Ozzy,Colby,Friend
+Ozzy,Stephenie,Friend
+Ozzy,Cirie,Friend
+Ozzy,Coach,Leaning positive
+Ozzy,Aubry,50/50
+Ozzy,Chrissy,Friend
+Ozzy,Angelina,Leaning negative
+Ozzy,Christian,Friend
+Ozzy,Mike,Friend
+Ozzy,Rick,Leaning negative
+Ozzy,Jonathan,Friend
+Ozzy,Dee,Foe
+Ozzy,Emily,Leaning negative
+Ozzy,Charlie,Leaning positive
+Ozzy,Q,Foe
+Ozzy,Tiffany,Friend
+Ozzy,Genevieve,Leaning negative
+Ozzy,Joe,Foe
+Ozzy,Kamilla,Leaning negative
+Ozzy,Kyle,Foe
+Ozzy,Rizo,Foe
+Ozzy,Savannah,Foe
+Coach,Jenna,Foe
+Coach,Colby,Friend
+Coach,Stephenie,Friend
+Coach,Cirie,Friend
+Coach,Ozzy,Foe
+Coach,Aubry,Friend
+Coach,Chrissy,Friend
+Coach,Angelina,50/50
+Coach,Christian,50/50
+Coach,Mike,Friend
+Coach,Rick,Leaning negative
+Coach,Jonathan,Friend
+Coach,Dee,Friend
+Coach,Emily,Leaning positive
+Coach,Charlie,Friend
+Coach,Q,50/50
+Coach,Tiffany,Leaning negative
+Coach,Genevieve,Foe
+Coach,Joe,Friend
+Coach,Kamilla,Friend
+Coach,Kyle,Friend
+Coach,Rizo,Foe
+Coach,Savannah,Foe
+Aubry,Jenna,50/50
+Aubry,Colby,Friend
+Aubry,Stephenie,Leaning positive
+Aubry,Cirie,Leaning positive
+Aubry,Ozzy,Leaning positive
+Aubry,Coach,Friend
+Aubry,Chrissy,Foe
+Aubry,Angelina,Leaning positive
+Aubry,Christian,Friend
+Aubry,Mike,50/50
+Aubry,Rick,Leaning negative
+Aubry,Jonathan,Leaning positive
+Aubry,Dee,Friend
+Aubry,Emily,Friend
+Aubry,Charlie,50/50
+Aubry,Q,50/50
+Aubry,Tiffany,Leaning positive
+Aubry,Genevieve,50/50
+Aubry,Joe,Friend
+Aubry,Kamilla,Leaning positive
+Aubry,Kyle,50/50
+Aubry,Rizo,Friend
+Aubry,Savannah,Friend
+Chrissy,Jenna,Friend
+Chrissy,Colby,50/50
+Chrissy,Stephenie,50/50
+Chrissy,Cirie,Friend
+Chrissy,Ozzy,Foe
+Chrissy,Coach,Friend
+Chrissy,Aubry,Leaning positive
+Chrissy,Angelina,Friend
+Chrissy,Christian,Leaning positive
+Chrissy,Mike,Friend
+Chrissy,Rick,Friend
+Chrissy,Jonathan,Leaning positive
+Chrissy,Dee,Foe
+Chrissy,Emily,Friend
+Chrissy,Charlie,Leaning positive
+Chrissy,Q,Leaning positive
+Chrissy,Tiffany,50/50
+Chrissy,Genevieve,Friend
+Chrissy,Joe,Foe
+Chrissy,Kamilla,Friend
+Chrissy,Kyle,Foe
+Chrissy,Rizo,Foe
+Chrissy,Savannah,Foe
+Angelina,Jenna,Friend
+Angelina,Colby,Foe
+Angelina,Stephenie,Foe
+Angelina,Cirie,Friend
+Angelina,Ozzy,Friend
+Angelina,Coach,Friend
+Angelina,Aubry,Friend
+Angelina,Chrissy,Friend
+Angelina,Christian,Friend
+Angelina,Mike,Friend
+Angelina,Rick,Friend
+Angelina,Jonathan,50/50
+Angelina,Dee,Leaning positive
+Angelina,Emily,50/50
+Angelina,Charlie,50/50
+Angelina,Q,Friend
+Angelina,Tiffany,Friend
+Angelina,Genevieve,50/50
+Angelina,Joe,Friend
+Angelina,Kamilla,50/50
+Angelina,Kyle,Friend
+Angelina,Rizo,50/50
+Angelina,Savannah,Leaning positive
+Christian,Jenna,Friend
+Christian,Colby,Leaning negative
+Christian,Stephenie,Leaning negative
+Christian,Cirie,Friend
+Christian,Ozzy,Friend
+Christian,Coach,Friend
+Christian,Aubry,Friend
+Christian,Chrissy,Friend
+Christian,Angelina,Foe
+Christian,Mike,Leaning positive
+Christian,Rick,Friend
+Christian,Jonathan,Friend
+Christian,Dee,Foe
+Christian,Emily,Leaning positive
+Christian,Charlie,Foe
+Christian,Q,Leaning negative
+Christian,Tiffany,Friend
+Christian,Genevieve,Friend
+Christian,Joe,Friend
+Christian,Kamilla,Leaning negative
+Christian,Kyle,Foe
+Christian,Rizo,Foe
+Christian,Savannah,Foe
+Mike,Jenna,Friend
+Mike,Colby,Friend
+Mike,Stephenie,Friend
+Mike,Cirie,Friend
+Mike,Ozzy,Friend
+Mike,Coach,Leaning positive
+Mike,Aubry,Friend
+Mike,Chrissy,Leaning negative
+Mike,Angelina,Friend
+Mike,Christian,Friend
+Mike,Rick,50/50
+Mike,Jonathan,Friend
+Mike,Dee,Foe
+Mike,Emily,Friend
+Mike,Charlie,Foe
+Mike,Q,Friend
+Mike,Tiffany,Friend
+Mike,Genevieve,Leaning negative
+Mike,Joe,Foe
+Mike,Kamilla,Friend
+Mike,Kyle,Foe
+Mike,Rizo,50/50
+Mike,Savannah,Leaning positive
+Rick,Jenna,Friend
+Rick,Colby,Friend
+Rick,Stephenie,Leaning negative
+Rick,Cirie,Foe
+Rick,Ozzy,Friend
+Rick,Coach,Friend
+Rick,Aubry,Friend
+Rick,Chrissy,Friend
+Rick,Angelina,Friend
+Rick,Christian,Leaning positive
+Rick,Mike,Leaning positive
+Rick,Jonathan,Friend
+Rick,Dee,Foe
+Rick,Emily,Friend
+Rick,Charlie,Foe
+Rick,Q,Friend
+Rick,Tiffany,Friend
+Rick,Genevieve,Friend
+Rick,Joe,Foe
+Rick,Kamilla,Friend
+Rick,Kyle,Friend
+Rick,Rizo,Friend
+Rick,Savannah,50/50
+Jonathan,Jenna,Friend
+Jonathan,Colby,Friend
+Jonathan,Stephenie,Friend
+Jonathan,Cirie,50/50
+Jonathan,Ozzy,Friend
+Jonathan,Coach,Friend
+Jonathan,Aubry,Foe
+Jonathan,Chrissy,Friend
+Jonathan,Angelina,50/50
+Jonathan,Christian,Friend
+Jonathan,Mike,Friend
+Jonathan,Rick,Leaning negative
+Jonathan,Dee,Foe
+Jonathan,Emily,Friend
+Jonathan,Charlie,Foe
+Jonathan,Q,50/50
+Jonathan,Tiffany,Leaning positive
+Jonathan,Genevieve,50/50
+Jonathan,Joe,Friend
+Jonathan,Kamilla,Foe
+Jonathan,Kyle,Foe
+Jonathan,Rizo,Foe
+Jonathan,Savannah,Foe
+Dee,Jenna,Friend
+Dee,Colby,Foe
+Dee,Stephenie,Leaning negative
+Dee,Cirie,Friend
+Dee,Ozzy,Friend
+Dee,Coach,Leaning positive
+Dee,Aubry,Foe
+Dee,Chrissy,Foe
+Dee,Angelina,Friend
+Dee,Christian,Leaning positive
+Dee,Mike,Friend
+Dee,Rick,Foe
+Dee,Jonathan,Friend
+Dee,Emily,Leaning positive
+Dee,Charlie,Leaning positive
+Dee,Q,Friend
+Dee,Tiffany,Leaning positive
+Dee,Genevieve,Foe
+Dee,Joe,Leaning positive
+Dee,Kamilla,Friend
+Dee,Kyle,Friend
+Dee,Rizo,Foe
+Dee,Savannah,Foe
+Emily,Jenna,50/50
+Emily,Colby,Foe
+Emily,Stephenie,Foe
+Emily,Cirie,Leaning negative
+Emily,Ozzy,Leaning positive
+Emily,Coach,Friend
+Emily,Aubry,Friend
+Emily,Chrissy,Friend
+Emily,Angelina,Leaning negative
+Emily,Christian,Leaning positive
+Emily,Mike,Foe
+Emily,Rick,Foe
+Emily,Jonathan,Leaning negative
+Emily,Dee,Leaning positive
+Emily,Charlie,Friend
+Emily,Q,Leaning positive
+Emily,Tiffany,Foe
+Emily,Genevieve,Friend
+Emily,Joe,Leaning negative
+Emily,Kamilla,Leaning positive
+Emily,Kyle,Leaning negative
+Emily,Rizo,Friend
+Emily,Savannah,50/50
+Charlie,Jenna,Friend
+Charlie,Colby,Leaning negative
+Charlie,Stephenie,Leaning negative
+Charlie,Cirie,Friend
+Charlie,Ozzy,Leaning negative
+Charlie,Coach,Friend
+Charlie,Aubry,Leaning positive
+Charlie,Chrissy,Friend
+Charlie,Angelina,Friend
+Charlie,Christian,Friend
+Charlie,Mike,Friend
+Charlie,Rick,Leaning negative
+Charlie,Jonathan,Leaning negative
+Charlie,Dee,Friend
+Charlie,Emily,Friend
+Charlie,Q,Leaning negative
+Charlie,Tiffany,Leaning positive
+Charlie,Genevieve,Friend
+Charlie,Joe,Leaning negative
+Charlie,Kamilla,Leaning negative
+Charlie,Kyle,Friend
+Charlie,Rizo,50/50
+Charlie,Savannah,50/50
+Q,Jenna,Friend
+Q,Colby,Foe
+Q,Stephenie,Foe
+Q,Cirie,Leaning positive
+Q,Ozzy,Friend
+Q,Coach,50/50
+Q,Aubry,Leaning negative
+Q,Chrissy,Foe
+Q,Angelina,Foe
+Q,Christian,50/50
+Q,Mike,Leaning positive
+Q,Rick,Foe
+Q,Jonathan,Friend
+Q,Dee,Leaning positive
+Q,Emily,Foe
+Q,Charlie,Foe
+Q,Tiffany,Friend
+Q,Genevieve,Friend
+Q,Joe,Leaning positive
+Q,Kamilla,Friend
+Q,Kyle,Leaning positive
+Q,Rizo,Foe
+Q,Savannah,Foe
+Tiffany,Jenna,Foe
+Tiffany,Colby,Leaning negative
+Tiffany,Stephenie,Friend
+Tiffany,Cirie,Friend
+Tiffany,Ozzy,50/50
+Tiffany,Coach,Friend
+Tiffany,Aubry,Friend
+Tiffany,Chrissy,Friend
+Tiffany,Angelina,Foe
+Tiffany,Christian,Friend
+Tiffany,Mike,Friend
+Tiffany,Rick,Foe
+Tiffany,Jonathan,Friend
+Tiffany,Dee,50/50
+Tiffany,Emily,50/50
+Tiffany,Charlie,Leaning positive
+Tiffany,Q,Leaning negative
+Tiffany,Genevieve,Friend
+Tiffany,Joe,Leaning positive
+Tiffany,Kamilla,Leaning positive
+Tiffany,Kyle,Friend
+Tiffany,Rizo,Leaning negative
+Tiffany,Savannah,Leaning negative
+Genevieve,Jenna,Friend
+Genevieve,Colby,Foe
+Genevieve,Stephenie,Friend
+Genevieve,Cirie,Leaning negative
+Genevieve,Ozzy,Friend
+Genevieve,Coach,Friend
+Genevieve,Aubry,Leaning positive
+Genevieve,Chrissy,Friend
+Genevieve,Angelina,Friend
+Genevieve,Christian,Friend
+Genevieve,Mike,Leaning negative
+Genevieve,Rick,Leaning positive
+Genevieve,Jonathan,50/50
+Genevieve,Dee,Friend
+Genevieve,Emily,Friend
+Genevieve,Charlie,Leaning negative
+Genevieve,Q,Friend
+Genevieve,Tiffany,Leaning negative
+Genevieve,Joe,Foe
+Genevieve,Kamilla,Friend
+Genevieve,Kyle,Friend
+Genevieve,Rizo,Leaning negative
+Genevieve,Savannah,50/50
+Joe,Jenna,Friend
+Joe,Colby,Friend
+Joe,Stephenie,Friend
+Joe,Cirie,Friend
+Joe,Ozzy,Friend
+Joe,Coach,Friend
+Joe,Aubry,Friend
+Joe,Chrissy,Friend
+Joe,Angelina,Friend
+Joe,Christian,Friend
+Joe,Mike,Friend
+Joe,Rick,Friend
+Joe,Jonathan,Friend
+Joe,Dee,Friend
+Joe,Emily,Friend
+Joe,Charlie,Friend
+Joe,Q,Friend
+Joe,Tiffany,Friend
+Joe,Genevieve,Friend
+Joe,Kamilla,Foe
+Joe,Kyle,Leaning positive
+Joe,Rizo,Foe
+Joe,Savannah,Foe
+Kamilla,Jenna,Friend
+Kamilla,Colby,Friend
+Kamilla,Stephenie,Friend
+Kamilla,Cirie,Foe
+Kamilla,Ozzy,Friend
+Kamilla,Coach,Friend
+Kamilla,Aubry,Leaning positive
+Kamilla,Chrissy,Leaning negative
+Kamilla,Angelina,Friend
+Kamilla,Christian,Foe
+Kamilla,Mike,Foe
+Kamilla,Rick,Foe
+Kamilla,Jonathan,50/50
+Kamilla,Dee,Friend
+Kamilla,Emily,Leaning negative
+Kamilla,Charlie,Friend
+Kamilla,Q,Foe
+Kamilla,Tiffany,Friend
+Kamilla,Genevieve,Foe
+Kamilla,Joe,Friend
+Kamilla,Kyle,Foe
+Kamilla,Rizo,Foe
+Kamilla,Savannah,Foe
+Kyle,Jenna,Friend
+Kyle,Colby,Friend
+Kyle,Stephenie,Friend
+Kyle,Cirie,Leaning positive
+Kyle,Ozzy,Friend
+Kyle,Coach,Foe
+Kyle,Aubry,Friend
+Kyle,Chrissy,Foe
+Kyle,Angelina,Friend
+Kyle,Christian,Friend
+Kyle,Mike,Foe
+Kyle,Rick,Leaning positive
+Kyle,Jonathan,Foe
+Kyle,Dee,Leaning positive
+Kyle,Emily,50/50
+Kyle,Charlie,Foe
+Kyle,Q,Foe
+Kyle,Tiffany,Friend
+Kyle,Genevieve,Friend
+Kyle,Joe,Friend
+Kyle,Kamilla,50/50
+Kyle,Rizo,Foe
+Kyle,Savannah,Foe
+Rizo,Jenna,Friend
+Rizo,Colby,Friend
+Rizo,Stephenie,Friend
+Rizo,Cirie,Foe
+Rizo,Ozzy,Foe
+Rizo,Coach,Leaning positive
+Rizo,Aubry,Friend
+Rizo,Chrissy,Friend
+Rizo,Angelina,Foe
+Rizo,Christian,Foe
+Rizo,Mike,Foe
+Rizo,Rick,Foe
+Rizo,Jonathan,Foe
+Rizo,Dee,Friend
+Rizo,Emily,Leaning negative
+Rizo,Charlie,Friend
+Rizo,Q,Foe
+Rizo,Tiffany,Leaning negative
+Rizo,Genevieve,Friend
+Rizo,Joe,Friend
+Rizo,Kamilla,Foe
+Rizo,Kyle,50/50
+Rizo,Savannah,Friend
+Savannah,Jenna,Leaning positive
+Savannah,Colby,Leaning positive
+Savannah,Stephenie,Leaning negative
+Savannah,Cirie,Foe
+Savannah,Ozzy,Friend
+Savannah,Coach,Friend
+Savannah,Aubry,Foe
+Savannah,Chrissy,Friend
+Savannah,Angelina,Foe
+Savannah,Christian,Friend
+Savannah,Mike,Friend
+Savannah,Rick,Friend
+Savannah,Jonathan,50/50
+Savannah,Dee,Foe
+Savannah,Emily,Foe
+Savannah,Charlie,Foe
+Savannah,Q,Foe
+Savannah,Tiffany,Foe
+Savannah,Genevieve,Foe
+Savannah,Joe,Friend
+Savannah,Kamilla,Friend
+Savannah,Kyle,Friend
+Savannah,Rizo,50/50
