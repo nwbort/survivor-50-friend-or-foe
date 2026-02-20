@@ -43,6 +43,7 @@
     .banner-lneg{background:rgba(140,60,10,.2);color:#e08840;border:1px solid rgba(200,100,30,.35)}
     .banner-5050{background:rgba(120,90,10,.2);color:#d4b840;border:1px solid rgba(180,140,30,.35)}
     .vs{display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:bold;color:#c45c00;text-shadow:0 0 12px rgba(196,92,0,.5);flex-shrink:0;align-self:center}
+    @media(max-width:660px){#cards{flex-direction:column}#cards .contestant-card{max-width:100%}.vs{padding:4px 0}}
     footer{margin-top:auto;padding:16px;text-align:center;font-size:.78rem;color:#604030;border-top:1px solid #1e1008;width:100%}
   </style>
 </head>
@@ -86,10 +87,19 @@ function overall(s1,s2){
   return{cls:'foe',label:'Likely Foes ☠'};
 }
 const yt='<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>';
+function vidId(url){const m=url.match(/[?&]v=([^&]+)/);return m?m[1]:'';}
 function buildCard(id,name,target,sent){
   const info=links[name],k=sk(sent);
   const el=document.getElementById(id);
   el.className='contestant-card card-'+k;
+  const vid=vidId(info.url);
+  if(vid){
+    el.style.backgroundImage='linear-gradient(160deg,rgba(13,8,2,.78) 0%,rgba(13,8,2,.86) 100%),url(https://img.youtube.com/vi/'+vid+'/hqdefault.jpg)';
+    el.style.backgroundSize='auto,cover';
+    el.style.backgroundPosition='0 0,center top';
+  }else{
+    el.style.backgroundImage='';el.style.backgroundSize='';el.style.backgroundPosition='';
+  }
   el.innerHTML='<div class="card-name">'+name+'</div>'
     +'<div class="card-fullname">'+info.full+'</div>'
     +'<div class="card-says-label">Feels about '+target+':</div>'
