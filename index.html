@@ -131,7 +131,10 @@ function sk(s){
 }
 function score(k){return {friend:2,lpos:1,'5050':0,lneg:-1,foe:-2}[k]??0;}
 function overall(s1,s2){
-  const avg=(score(sk(s1))+score(sk(s2)))/2;
+  const k1=sk(s1),k2=sk(s2);
+  if(k1==='foe'||k2==='foe')return{cls:'foe',label:'Likely Foes ☠'};
+  if(k1==='lneg'||k2==='lneg')return{cls:'lneg',label:'Leaning Hostile'};
+  const avg=(score(k1)+score(k2))/2;
   if(avg>=1.5)return{cls:'friend',label:'Likely Friends ♥'};
   if(avg>=0.5)return{cls:'lpos',label:'Leaning Friendly'};
   if(avg>=-0.5)return{cls:'5050',label:'Could Go Either Way'};
