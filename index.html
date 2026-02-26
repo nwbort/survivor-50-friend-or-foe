@@ -21,7 +21,14 @@
     #cards{display:flex;gap:24px;width:100%;flex-wrap:wrap;justify-content:center}
     .contestant-card{background:linear-gradient(160deg,#1e1208 0%,#120c04 100%);border:2px solid #3d2800;border-radius:12px;flex:1 1 300px;max-width:400px;padding:28px 24px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
     .contestant-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:12px 12px 0 0}
-    .card-name{font-size:1.5rem;color:#ff8c1a;font-weight:bold;letter-spacing:.04em}
+    .card-name{font-size:1.5rem;color:#ff8c1a;font-weight:bold;letter-spacing:.04em;cursor:pointer;user-select:none}
+    .card-name:hover{color:#ffaa44}
+    .card-name-arrow{font-size:.7em;opacity:.55;margin-left:5px}
+    .name-picker{background:#1a0d00;border:1px solid #c45c00;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.85);z-index:1000;max-height:300px;overflow-y:auto}
+    .name-picker-item{padding:10px 16px;cursor:pointer;font-size:.88rem;color:#f0e6d3;font-family:Georgia,serif;border-bottom:1px solid #2d1500}
+    .name-picker-item:last-child{border-bottom:none}
+    .name-picker-item:hover{background:#3d1500;color:#ff8c1a}
+    .name-picker-item.active{color:#ff8c1a;font-weight:bold}
     .card-fullname{font-size:.82rem;color:#a07850;margin-top:-10px}
     .card-says-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#806040}
     .sentiment-badge{display:inline-block;padding:8px 18px;border-radius:6px;font-size:1rem;font-weight:bold;letter-spacing:.05em}
@@ -68,6 +75,51 @@
 const links = {"Colby": {"url": "https://www.youtube.com/watch?v=OjZiYquhzwM", "full": "Colby Donaldson"}, "Stephenie": {"url": "https://www.youtube.com/watch?v=Ad0dAAFmWbM", "full": "Stephenie LaGrossa Kendrick"}, "Aubry": {"url": "https://www.youtube.com/watch?v=GsplWyvZY0Q", "full": "Aubry Bracco"}, "Angelina": {"url": "https://www.youtube.com/watch?v=N859ArTpvyY", "full": "Angelina Keeley"}, "Q": {"url": "https://www.youtube.com/watch?v=texwGTCkhlo", "full": "Q Burdette"}, "Genevieve": {"url": "https://www.youtube.com/watch?v=48q6Btg338Y", "full": "Genevieve Mushaluk"}, "Kyle": {"url": "https://www.youtube.com/watch?v=3RIvVaxRlU8", "full": "Kyle Fraser"}, "Rizo": {"url": "https://www.youtube.com/watch?v=XXS8oztLTjY", "full": "Rizo Velovic"}, "Jenna": {"url": "https://www.youtube.com/watch?v=2FKOhCbMzeA", "full": "Jenna Lewis-Dougherty"}, "Cirie": {"url": "https://www.youtube.com/watch?v=cI5m7vNOQzk", "full": "Cirie Fields"}, "Ozzy": {"url": "https://www.youtube.com/watch?v=hD5yJnRguGc", "full": "Ozzy Lusth"}, "Christian": {"url": "https://www.youtube.com/watch?v=bqEYtWB1P-w", "full": "Christian Hubicki"}, "Rick": {"url": "https://www.youtube.com/watch?v=6sryNxL_094", "full": "Rick Devens"}, "Emily": {"url": "https://www.youtube.com/watch?v=_E0yxXZqhk8", "full": "Emily Flippen"}, "Joe": {"url": "https://www.youtube.com/watch?v=s-dGoINbCdM", "full": "Joe Hunter"}, "Savannah": {"url": "https://www.youtube.com/watch?v=zMCZbqgmmdA", "full": "Savannah Louie"}, "Coach": {"url": "https://www.youtube.com/watch?v=GpF0QV7XOAk", "full": "Coach Wade"}, "Chrissy": {"url": "https://www.youtube.com/watch?v=spo1SKcifXk", "full": "Chrissy Hofbeck"}, "Mike": {"url": "https://www.youtube.com/watch?v=rOXbmmlDZg4", "full": "Mike White"}, "Jonathan": {"url": "https://www.youtube.com/watch?v=FcJQwFk0Vw0", "full": "Jonathan Young"}, "Dee": {"url": "https://www.youtube.com/watch?v=8rsRPWWfwMk", "full": "Dee Valladares"}, "Charlie": {"url": "https://www.youtube.com/watch?v=FNoBAyaZa4I", "full": "Charlie Davis"}, "Tiffany": {"url": "https://www.youtube.com/watch?v=aYtlj9WbAug", "full": "Tiffany Ervin"}, "Kamilla": {"url": "https://www.youtube.com/watch?v=OhijVqcrk5g", "full": "Kamilla Karthigesu"}};
 const smap  = {"Jenna": {"Colby": "Friend", "Stephenie": "Friend", "Cirie": "Foe", "Ozzy": "Friend", "Coach": "Foe", "Aubry": "Leaning positive", "Chrissy": "Foe", "Angelina": "Friend", "Christian": "Leaning positive", "Mike": "Leaning positive", "Rick": "Leaning negative", "Jonathan": "Friend", "Dee": "Foe", "Emily": "Friend", "Charlie": "Friend", "Q": "Friend", "Tiffany": "Leaning positive", "Genevieve": "50/50", "Joe": "Friend", "Kamilla": "Friend", "Kyle": "Friend", "Rizo": "Friend", "Savannah": "Friend"}, "Colby": {"Jenna": "Friend", "Stephenie": "Friend", "Cirie": "Friend", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Leaning positive", "Chrissy": "50/50", "Angelina": "Foe", "Christian": "Leaning negative", "Mike": "50/50", "Rick": "Friend", "Jonathan": "Friend", "Dee": "Foe", "Emily": "Friend", "Charlie": "50/50", "Q": "Foe", "Tiffany": "50/50", "Genevieve": "Friend", "Joe": "Friend", "Kamilla": "Foe", "Kyle": "Friend", "Rizo": "Leaning negative", "Savannah": "Friend"}, "Stephenie": {"Jenna": "Friend", "Colby": "Friend", "Cirie": "Friend", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Friend", "Chrissy": "Friend", "Angelina": "50/50", "Christian": "Leaning positive", "Mike": "Leaning positive", "Rick": "Friend", "Jonathan": "Friend", "Dee": "Friend", "Emily": "Friend", "Charlie": "50/50", "Q": "Foe", "Tiffany": "Foe", "Genevieve": "Friend", "Joe": "Friend", "Kamilla": "Leaning positive", "Kyle": "Leaning positive", "Rizo": "50/50", "Savannah": "50/50"}, "Cirie": {"Jenna": "Leaning positive", "Colby": "Leaning positive", "Stephenie": "50/50", "Ozzy": "Leaning positive", "Coach": "Friend", "Aubry": "Friend", "Chrissy": "Friend", "Angelina": "Friend", "Christian": "50/50", "Mike": "50/50", "Rick": "Leaning positive", "Jonathan": "Friend", "Dee": "Leaning negative", "Emily": "Friend", "Charlie": "50/50", "Q": "Leaning negative", "Tiffany": "Leaning positive", "Genevieve": "Leaning negative", "Joe": "Leaning positive", "Kamilla": "50/50", "Kyle": "Foe", "Rizo": "Foe", "Savannah": "Foe"}, "Ozzy": {"Jenna": "Friend", "Colby": "Friend", "Stephenie": "Friend", "Cirie": "Friend", "Coach": "Leaning positive", "Aubry": "50/50", "Chrissy": "Friend", "Angelina": "Leaning negative", "Christian": "Friend", "Mike": "Friend", "Rick": "Leaning negative", "Jonathan": "Friend", "Dee": "Foe", "Emily": "Leaning negative", "Charlie": "Leaning positive", "Q": "Foe", "Tiffany": "Friend", "Genevieve": "Leaning negative", "Joe": "Foe", "Kamilla": "Leaning negative", "Kyle": "Foe", "Rizo": "Foe", "Savannah": "Foe"}, "Coach": {"Jenna": "Foe", "Colby": "Friend", "Stephenie": "Friend", "Cirie": "Friend", "Ozzy": "Foe", "Aubry": "Friend", "Chrissy": "Friend", "Angelina": "50/50", "Christian": "50/50", "Mike": "Friend", "Rick": "Leaning negative", "Jonathan": "Friend", "Dee": "Friend", "Emily": "Leaning positive", "Charlie": "Friend", "Q": "50/50", "Tiffany": "Leaning negative", "Genevieve": "Foe", "Joe": "Friend", "Kamilla": "Friend", "Kyle": "Friend", "Rizo": "Foe", "Savannah": "Foe"}, "Aubry": {"Jenna": "50/50", "Colby": "Friend", "Stephenie": "Leaning positive", "Cirie": "Leaning positive", "Ozzy": "Leaning positive", "Coach": "Friend", "Chrissy": "Foe", "Angelina": "Leaning positive", "Christian": "Friend", "Mike": "50/50", "Rick": "Leaning negative", "Jonathan": "Leaning positive", "Dee": "Friend", "Emily": "Friend", "Charlie": "50/50", "Q": "50/50", "Tiffany": "Leaning positive", "Genevieve": "50/50", "Joe": "Friend", "Kamilla": "Leaning positive", "Kyle": "50/50", "Rizo": "Friend", "Savannah": "Friend"}, "Chrissy": {"Jenna": "Friend", "Colby": "50/50", "Stephenie": "50/50", "Cirie": "Friend", "Ozzy": "Foe", "Coach": "Friend", "Aubry": "Leaning positive", "Angelina": "Friend", "Christian": "Leaning positive", "Mike": "Friend", "Rick": "Friend", "Jonathan": "Leaning positive", "Dee": "Foe", "Emily": "Friend", "Charlie": "Leaning positive", "Q": "Leaning positive", "Tiffany": "50/50", "Genevieve": "Friend", "Joe": "Foe", "Kamilla": "Friend", "Kyle": "Foe", "Rizo": "Foe", "Savannah": "Foe"}, "Angelina": {"Jenna": "Friend", "Colby": "Foe", "Stephenie": "Foe", "Cirie": "Friend", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Friend", "Chrissy": "Friend", "Christian": "Friend", "Mike": "Friend", "Rick": "Friend", "Jonathan": "50/50", "Dee": "Leaning positive", "Emily": "50/50", "Charlie": "50/50", "Q": "Friend", "Tiffany": "Friend", "Genevieve": "50/50", "Joe": "Friend", "Kamilla": "50/50", "Kyle": "Friend", "Rizo": "50/50", "Savannah": "Leaning positive"}, "Christian": {"Jenna": "Friend", "Colby": "Leaning negative", "Stephenie": "Leaning negative", "Cirie": "Friend", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Friend", "Chrissy": "Friend", "Angelina": "Foe", "Mike": "Leaning positive", "Rick": "Friend", "Jonathan": "Friend", "Dee": "Foe", "Emily": "Leaning positive", "Charlie": "Foe", "Q": "Leaning negative", "Tiffany": "Friend", "Genevieve": "Friend", "Joe": "Friend", "Kamilla": "Leaning negative", "Kyle": "Foe", "Rizo": "Foe", "Savannah": "Foe"}, "Mike": {"Jenna": "Friend", "Colby": "Friend", "Stephenie": "Friend", "Cirie": "Friend", "Ozzy": "Friend", "Coach": "Leaning positive", "Aubry": "Friend", "Chrissy": "Leaning negative", "Angelina": "Friend", "Christian": "Friend", "Rick": "50/50", "Jonathan": "Friend", "Dee": "Foe", "Emily": "Friend", "Charlie": "Foe", "Q": "Friend", "Tiffany": "Friend", "Genevieve": "Leaning negative", "Joe": "Foe", "Kamilla": "Friend", "Kyle": "Foe", "Rizo": "50/50", "Savannah": "Leaning positive"}, "Rick": {"Jenna": "Friend", "Colby": "Friend", "Stephenie": "Leaning negative", "Cirie": "Foe", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Friend", "Chrissy": "Friend", "Angelina": "Friend", "Christian": "Leaning positive", "Mike": "Leaning positive", "Jonathan": "Friend", "Dee": "Foe", "Emily": "Friend", "Charlie": "Foe", "Q": "Friend", "Tiffany": "Friend", "Genevieve": "Friend", "Joe": "Foe", "Kamilla": "Friend", "Kyle": "Friend", "Rizo": "Friend", "Savannah": "50/50"}, "Jonathan": {"Jenna": "Friend", "Colby": "Friend", "Stephenie": "Friend", "Cirie": "50/50", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Foe", "Chrissy": "Friend", "Angelina": "50/50", "Christian": "Friend", "Mike": "Friend", "Rick": "Leaning negative", "Dee": "Foe", "Emily": "Friend", "Charlie": "Foe", "Q": "50/50", "Tiffany": "Leaning positive", "Genevieve": "50/50", "Joe": "Friend", "Kamilla": "Foe", "Kyle": "Foe", "Rizo": "Foe", "Savannah": "Foe"}, "Dee": {"Jenna": "Friend", "Colby": "Foe", "Stephenie": "Leaning negative", "Cirie": "Friend", "Ozzy": "Friend", "Coach": "Leaning positive", "Aubry": "Foe", "Chrissy": "Foe", "Angelina": "Friend", "Christian": "Leaning positive", "Mike": "Friend", "Rick": "Foe", "Jonathan": "Friend", "Emily": "Leaning positive", "Charlie": "Leaning positive", "Q": "Friend", "Tiffany": "Leaning positive", "Genevieve": "Foe", "Joe": "Leaning positive", "Kamilla": "Friend", "Kyle": "Friend", "Rizo": "Foe", "Savannah": "Foe"}, "Emily": {"Jenna": "50/50", "Colby": "Foe", "Stephenie": "Foe", "Cirie": "Leaning negative", "Ozzy": "Leaning positive", "Coach": "Friend", "Aubry": "Friend", "Chrissy": "Friend", "Angelina": "Leaning negative", "Christian": "Leaning positive", "Mike": "Foe", "Rick": "Foe", "Jonathan": "Leaning negative", "Dee": "Leaning positive", "Charlie": "Friend", "Q": "Leaning positive", "Tiffany": "Foe", "Genevieve": "Friend", "Joe": "Leaning negative", "Kamilla": "Leaning positive", "Kyle": "Leaning negative", "Rizo": "Friend", "Savannah": "50/50"}, "Charlie": {"Jenna": "Friend", "Colby": "Leaning negative", "Stephenie": "Leaning negative", "Cirie": "Friend", "Ozzy": "Leaning negative", "Coach": "Friend", "Aubry": "Leaning positive", "Chrissy": "Friend", "Angelina": "Friend", "Christian": "Friend", "Mike": "Friend", "Rick": "Leaning negative", "Jonathan": "Leaning negative", "Dee": "Friend", "Emily": "Friend", "Q": "Leaning negative", "Tiffany": "Leaning positive", "Genevieve": "Friend", "Joe": "Leaning negative", "Kamilla": "Leaning negative", "Kyle": "Friend", "Rizo": "50/50", "Savannah": "50/50"}, "Q": {"Jenna": "Friend", "Colby": "Foe", "Stephenie": "Foe", "Cirie": "Leaning positive", "Ozzy": "Friend", "Coach": "50/50", "Aubry": "Leaning negative", "Chrissy": "Foe", "Angelina": "Foe", "Christian": "50/50", "Mike": "Leaning positive", "Rick": "Foe", "Jonathan": "Friend", "Dee": "Leaning positive", "Emily": "Foe", "Charlie": "Foe", "Tiffany": "Friend", "Genevieve": "Friend", "Joe": "Leaning positive", "Kamilla": "Friend", "Kyle": "Leaning positive", "Rizo": "Foe", "Savannah": "Foe"}, "Tiffany": {"Jenna": "Foe", "Colby": "Leaning negative", "Stephenie": "Friend", "Cirie": "Friend", "Ozzy": "50/50", "Coach": "Friend", "Aubry": "Friend", "Chrissy": "Friend", "Angelina": "Foe", "Christian": "Friend", "Mike": "Friend", "Rick": "Foe", "Jonathan": "Friend", "Dee": "50/50", "Emily": "50/50", "Charlie": "Leaning positive", "Q": "Leaning negative", "Genevieve": "Friend", "Joe": "Leaning positive", "Kamilla": "Leaning positive", "Kyle": "Friend", "Rizo": "Leaning negative", "Savannah": "Leaning negative"}, "Genevieve": {"Jenna": "Friend", "Colby": "Foe", "Stephenie": "Friend", "Cirie": "Leaning negative", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Leaning positive", "Chrissy": "Friend", "Angelina": "Friend", "Christian": "Friend", "Mike": "Leaning negative", "Rick": "Leaning positive", "Jonathan": "50/50", "Dee": "Friend", "Emily": "Friend", "Charlie": "Leaning negative", "Q": "Friend", "Tiffany": "Leaning negative", "Joe": "Foe", "Kamilla": "Friend", "Kyle": "Friend", "Rizo": "Leaning negative", "Savannah": "50/50"}, "Joe": {"Jenna": "Friend", "Colby": "Friend", "Stephenie": "Friend", "Cirie": "Friend", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Friend", "Chrissy": "Friend", "Angelina": "Friend", "Christian": "Friend", "Mike": "Friend", "Rick": "Friend", "Jonathan": "Friend", "Dee": "Friend", "Emily": "Friend", "Charlie": "Friend", "Q": "Friend", "Tiffany": "Friend", "Genevieve": "Friend", "Kamilla": "Foe", "Kyle": "Leaning positive", "Rizo": "Foe", "Savannah": "Foe"}, "Kamilla": {"Jenna": "Friend", "Colby": "Friend", "Stephenie": "Friend", "Cirie": "Foe", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Leaning positive", "Chrissy": "Leaning negative", "Angelina": "Friend", "Christian": "Foe", "Mike": "Foe", "Rick": "Foe", "Jonathan": "50/50", "Dee": "Friend", "Emily": "Leaning negative", "Charlie": "Friend", "Q": "Foe", "Tiffany": "Friend", "Genevieve": "Foe", "Joe": "Friend", "Kyle": "Foe", "Rizo": "Foe", "Savannah": "Foe"}, "Kyle": {"Jenna": "Friend", "Colby": "Friend", "Stephenie": "Friend", "Cirie": "Leaning positive", "Ozzy": "Friend", "Coach": "Foe", "Aubry": "Friend", "Chrissy": "Foe", "Angelina": "Friend", "Christian": "Friend", "Mike": "Foe", "Rick": "Leaning positive", "Jonathan": "Foe", "Dee": "Leaning positive", "Emily": "50/50", "Charlie": "Foe", "Q": "Foe", "Tiffany": "Friend", "Genevieve": "Friend", "Joe": "Friend", "Kamilla": "50/50", "Rizo": "Foe", "Savannah": "Foe"}, "Rizo": {"Jenna": "Friend", "Colby": "Friend", "Stephenie": "Friend", "Cirie": "Foe", "Ozzy": "Foe", "Coach": "Leaning positive", "Aubry": "Friend", "Chrissy": "Friend", "Angelina": "Foe", "Christian": "Foe", "Mike": "Foe", "Rick": "Foe", "Jonathan": "Foe", "Dee": "Friend", "Emily": "Leaning negative", "Charlie": "Friend", "Q": "Foe", "Tiffany": "Leaning negative", "Genevieve": "Friend", "Joe": "Friend", "Kamilla": "Foe", "Kyle": "50/50", "Savannah": "Friend"}, "Savannah": {"Jenna": "Leaning positive", "Colby": "Leaning positive", "Stephenie": "Leaning negative", "Cirie": "Foe", "Ozzy": "Friend", "Coach": "Friend", "Aubry": "Foe", "Chrissy": "Friend", "Angelina": "Foe", "Christian": "Friend", "Mike": "Friend", "Rick": "Friend", "Jonathan": "50/50", "Dee": "Foe", "Emily": "Foe", "Charlie": "Foe", "Q": "Foe", "Tiffany": "Foe", "Genevieve": "Foe", "Joe": "Friend", "Kamilla": "Friend", "Kyle": "Friend", "Rizo": "50/50"}};
 const contestants = Object.keys(links);
+let currentA=null,currentB=null,pickerEl=null,docClickHandler=null;
+function closePicker(){
+  if(pickerEl){pickerEl.remove();pickerEl=null;}
+  if(docClickHandler){document.removeEventListener('click',docClickHandler);docClickHandler=null;}
+}
+function showNamePicker(event,el,cardId){
+  event.stopPropagation();
+  closePicker();
+  const current=cardId==='card1'?currentA:currentB;
+  const other=cardId==='card1'?currentB:currentA;
+  const picker=document.createElement('div');
+  picker.className='name-picker';
+  contestants.forEach(function(name){
+    if(name===other)return;
+    const item=document.createElement('div');
+    item.className='name-picker-item'+(name===current?' active':'');
+    item.textContent=name+' — '+links[name].full;
+    item.onclick=function(e){e.stopPropagation();closePicker();selectName(cardId,name);};
+    picker.appendChild(item);
+  });
+  document.body.appendChild(picker);
+  pickerEl=picker;
+  const rect=el.getBoundingClientRect();
+  const pw=Math.min(280,window.innerWidth-20);
+  let left=rect.left,top=rect.bottom+4;
+  if(left+pw>window.innerWidth-10)left=window.innerWidth-pw-10;
+  if(left<10)left=10;
+  if(top+300>window.innerHeight)top=Math.max(4,rect.top-304);
+  picker.style.cssText='position:fixed;left:'+left+'px;top:'+top+'px;width:'+pw+'px';
+  docClickHandler=function(){closePicker();};
+  setTimeout(function(){document.addEventListener('click',docClickHandler);},0);
+}
+function selectName(cardId,name){
+  if(cardId==='card1')currentA=name;else currentB=name;
+  const sa=(smap[currentA]&&smap[currentA][currentB])||'50/50';
+  const sb=(smap[currentB]&&smap[currentB][currentA])||'50/50';
+  buildCard('card1',currentA,currentB,sa);
+  buildCard('card2',currentB,currentA,sb);
+  const o=overall(sa,sb);
+  const bn=document.getElementById('relationBanner');
+  bn.className='banner-'+o.cls;
+  bn.textContent=currentA+' & '+currentB+' — '+o.label;
+  const r=document.getElementById('result');
+  r.style.display='none';void r.offsetWidth;r.style.display='flex';
+}
 function sk(s){
   if(!s)return '5050';
   const l=s.toLowerCase();
@@ -100,7 +152,7 @@ function buildCard(id,name,target,sent){
   }else{
     el.style.backgroundImage='';el.style.backgroundSize='';el.style.backgroundPosition='';
   }
-  el.innerHTML='<div class="card-name">'+name+'</div>'
+  el.innerHTML='<div class="card-name" onclick="showNamePicker(event,this,\''+id+'\')" title="Choose contestant">'+name+'<span class="card-name-arrow">▾</span></div>'
     +'<div class="card-fullname">'+info.full+'</div>'
     +'<div class="card-says-label">Feels about '+target+':</div>'
     +'<span class="sentiment-badge sentiment-'+k+'">'+(sent||'50/50')+'</span>'
@@ -108,15 +160,15 @@ function buildCard(id,name,target,sent){
 }
 function generatePair(){
   const s=[...contestants].sort(()=>Math.random()-.5);
-  const a=s[0],b=s[1];
-  const sa=(smap[a]&&smap[a][b])||'50/50';
-  const sb=(smap[b]&&smap[b][a])||'50/50';
-  buildCard('card1',a,b,sa);
-  buildCard('card2',b,a,sb);
+  currentA=s[0];currentB=s[1];
+  const sa=(smap[currentA]&&smap[currentA][currentB])||'50/50';
+  const sb=(smap[currentB]&&smap[currentB][currentA])||'50/50';
+  buildCard('card1',currentA,currentB,sa);
+  buildCard('card2',currentB,currentA,sb);
   const o=overall(sa,sb);
   const bn=document.getElementById('relationBanner');
   bn.className='banner-'+o.cls;
-  bn.textContent=a+' & '+b+' — '+o.label;
+  bn.textContent=currentA+' & '+currentB+' — '+o.label;
   const r=document.getElementById('result');
   r.style.display='none';void r.offsetWidth;r.style.display='flex';
 }
